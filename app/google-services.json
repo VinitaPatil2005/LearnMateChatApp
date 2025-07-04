@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1060289664963",
+    "project_id": "learnmatechatapp",
+    "storage_bucket": "learnmatechatapp.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1060289664963:android:08c40602c2427cdf10cf76",
+        "android_client_info": {
+          "package_name": "com.example.learnmatechatapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAnBrtXYaDQiELTlsFbC7SdGlmRN7a9Pa8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

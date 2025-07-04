@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  This is a ConstraintLayout for a single chat item in a list.
+  It's designed for a dark theme, matching the provided screenshot.
+-->
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="16dp"
+    android:background="#1B1B1B"
+    android:clickable="true"
+    android:focusable="true">
+
+    <!-- Profile Image/Avatar -->
+    <!-- The border has been removed to match the image. -->
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/imgProfile"
+        android:layout_width="52dp"
+        android:layout_height="52dp"
+        android:src="@drawable/ic_default_avatar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+    <!-- Name -->
+    <!-- Text color is changed to white for the dark theme. -->
+    <TextView
+        android:id="@+id/txtUserName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="8dp"
+        android:textSize="17sp"
+        android:textStyle="bold"
+        android:textColor="@android:color/white"
+        android:maxLines="1"
+        android:ellipsize="end"
+        app:layout_constraintStart_toEndOf="@id/imgProfile"
+        app:layout_constraintEnd_toStartOf="@id/txtTime"
+        app:layout_constraintTop_toTopOf="@id/imgProfile"
+        app:layout_constraintBottom_toTopOf="@+id/imgCheck"
+        app:layout_constraintVertical_chainStyle="packed"
+        tools:text="Andrew Joseph" />
+
+    <!--
+      Checkmark Icon for read receipt.
+      NOTE: You need to add a checkmark icon to your `res/drawable` folder.
+      For example, you can get one from Google's Material Icons and name it 'ic_checkmark_read.xml'.
+    -->
+    <ImageView
+        android:id="@+id/imgCheck"
+        android:layout_width="16dp"
+        android:layout_height="16dp"
+        android:src="@drawable/ic_checkmark_read"
+        app:tint="#757575"
+        app:layout_constraintStart_toStartOf="@id/txtUserName"
+        app:layout_constraintTop_toBottomOf="@id/txtUserName"
+        app:layout_constraintBottom_toBottomOf="@id/imgProfile" />
+
+    <!-- Last Message -->
+    <!-- Text color is changed to a light gray. It's now constrained next to the checkmark. -->
+    <TextView
+        android:id="@+id/txtLastMessage"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:textSize="15sp"
+        android:textColor="#757575"
+        android:maxLines="1"
+        android:ellipsize="end"
+        app:layout_constraintStart_toEndOf="@id/imgCheck"
+        app:layout_constraintEnd_toEndOf="@id/txtUserName"
+        app:layout_constraintTop_toTopOf="@id/imgCheck"
+        app:layout_constraintBottom_toBottomOf="@id/imgCheck"
+        tools:text="Hello student, welcome to ..." />
+
+    <!-- Time -->
+    <!-- Text color is changed to a light gray. -->
+    <TextView
+        android:id="@+id/txtTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="12sp"
+        android:textColor="#757575"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/txtUserName"
+        app:layout_constraintBottom_toBottomOf="@id/txtUserName"
+        tools:text="Yesterday" />
+
+    <!--
+      Unread Badge and Online Indicator are not in the target screenshot.
+      Their visibility is set to "gone".
+    -->
+    <TextView
+        android:id="@+id/unreadBadge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        tools:text="3" />
+
+    <View
+        android:id="@+id/onlineIndicator"
+        android:layout_width="12dp"
+        android:layout_height="12dp"
+        android:visibility="gone" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
